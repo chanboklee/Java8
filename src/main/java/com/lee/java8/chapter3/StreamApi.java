@@ -32,6 +32,9 @@ public class StreamApi {
                 .map(OnlineClass::getTitle)
                 .forEach(System.out::println);
 
+        // 수업 이름만 모아서 스트림 만들고 정렬 리스트 만들기
+        List<String> collect = springClass.stream().sorted().map(OnlineClass::getTitle).collect(Collectors.toList());
+
         List<OnlineClass> javaClasses = new ArrayList<>();
         javaClasses.add(new OnlineClass(6, "The Java, Test", true));
         javaClasses.add(new OnlineClass(7, "The Java, Code manipulation", true));
