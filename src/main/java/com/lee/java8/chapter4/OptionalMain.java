@@ -1,12 +1,17 @@
 package com.lee.java8.chapter4;
 
-import com.lee.java8.chapter3.StreamApi;
-
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Optional 사용 시 주의할 것
+ * 리턴값으로만 쓰기를 권장.. (메소드 매개변수 타입, 맵의 키 타입, 인스턴스 필드 타입으로 쓰지말자)
+ * Optional을 리턴하는 메소드에서 null을 리턴하지 말자
+ * 프리미티브 타입을 Optional을 따로 있다. OptionalInt, OptionalLong..
+ * Collection, Map, Stream Array Optional은 Optional로 감싸지 말자..
+ */
 public class OptionalMain {
 
     public static void main(String[] args) {
@@ -47,6 +52,9 @@ public class OptionalMain {
             this.id = id;
             this.title = title;
             this.closed = closed;
+        }
+
+        OnlineClass() {
         }
 
         public int getId() {
